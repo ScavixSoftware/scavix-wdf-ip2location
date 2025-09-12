@@ -5,9 +5,4 @@ It contains logic for IP detection and resolution. It mainly wraps [IP2Location]
 
 Installation
 ============
-Install the package with `composer require scavix/wdf-ip2location`
-
-Dependencies
-============
-
-* [ip2location/ip2location-php](https://packagist.org/packages/ip2location/ip2location-php)
+Install the package with `composer require {{name}}`.
