@@ -1,0 +1,325 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 2,
+  "metadata": {
+    "timestamp": "2025-09-17T07:46:45.412Z",
+    "manufacturer": {
+      "name": "Scavix Software GmbH & Co. KG",
+      "url": [
+        "https://www.scavix.com"
+      ]
+    },
+    "component": {
+      "type": "library",
+      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "group": "scavix",
+      "name": "wdf-ip2location",
+      "version": "1.0.1",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "Scavix Software GmbH & Co. KG",
+          "email": "info@scavix.com"
+        },
+        {
+          "name": "Christoph Bünger"
+        },
+        {
+          "name": "Daniel Spors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "description": "IP2Location components"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "group": "scavix",
+      "name": "wdf-ip2location",
+      "version": "1.0.1",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "Scavix Software GmbH & Co. KG",
+          "email": "info@scavix.com"
+        },
+        {
+          "name": "Christoph Bünger"
+        },
+        {
+          "name": "Daniel Spors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "description": "IP2Location components"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:composer/scavix/wdf-core@1.0.2",
+      "purl": "pkg:composer/scavix/wdf-core@1.0.2",
+      "group": "scavix",
+      "name": "wdf-core",
+      "version": "1.0.2",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "Scavix Software GmbH & Co. KG",
+          "email": "info@scavix.com"
+        },
+        {
+          "name": "Christoph Bünger"
+        },
+        {
+          "name": "Daniel Spors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "description": "Core components"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:composer/scavix/lessphp@v0.8.1",
+      "purl": "pkg:composer/scavix/lessphp@v0.8.1",
+      "group": "scavix",
+      "name": "lessphp",
+      "version": "v0.8.1",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "Leaf Corcoran",
+          "email": "leafot@gmail.com"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0"
+          }
+        }
+      ],
+      "description": "lessphp is a compiler for LESS written in PHP."
+    },
+    {
+      "type": "library",
+      "bom-ref": "external:jQuery@3.7.1",
+      "group": "external",
+      "name": "jQuery",
+      "version": "3.7.1",
+      "description": "jQuery is a fast, small, and feature-rich JavaScript library.",
+      "authors": [
+        {
+          "name": "OpenJS Foundation and other contributors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jquery.com/"
+        }
+      ],
+      "components": [
+        {
+          "type": "file",
+          "bom-ref": "file:jQuery@3.7.1/res/jquery.js",
+          "group": "files",
+          "name": "res/jquery.js",
+          "externalReferences": [
+            {
+              "type": "distribution",
+              "url": "https://code.jquery.com/jquery-3.7.1.min.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "external:jQuery UI@1.14.1",
+      "group": "external",
+      "name": "jQuery UI",
+      "version": "1.14.1",
+      "description": "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.",
+      "authors": [
+        {
+          "name": "OpenJS Foundation and other contributors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jqueryui.com/"
+        }
+      ],
+      "components": [
+        {
+          "type": "file",
+          "bom-ref": "file:jQuery UI@1.14.1/res/jquery-ui/jquery-ui.js",
+          "group": "files",
+          "name": "res/jquery-ui/jquery-ui.js",
+          "externalReferences": [
+            {
+              "type": "distribution",
+              "url": "https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+      "purl": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+      "group": "scavix",
+      "name": "wdf-curlwrapper",
+      "version": "1.0.1",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "Scavix Software GmbH & Co. KG",
+          "email": "info@scavix.com"
+        },
+        {
+          "name": "Christoph Bünger"
+        },
+        {
+          "name": "Daniel Spors"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "description": "CURL components"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:composer/ip2location/ip2location-php@9.8.0",
+      "purl": "pkg:composer/ip2location/ip2location-php@9.8.0",
+      "group": "ip2location",
+      "name": "ip2location-php",
+      "version": "9.8.0",
+      "supplier": {
+        "name": "Scavix Software GmbH & Co. KG",
+        "url": [
+          "https://www.scavix.com"
+        ]
+      },
+      "authors": [
+        {
+          "name": "IP2Location",
+          "email": "support@ip2location.com"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "description": "[Official Release] IP2Location PHP API to get location info from IPv4 and IPv6 address."
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "dependsOn": [
+        "pkg:composer/scavix/wdf-core@1.0.2",
+        "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+        "pkg:composer/ip2location/ip2location-php@9.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:composer/scavix/wdf-core@1.0.2",
+      "dependsOn": [
+        "pkg:composer/scavix/lessphp@v0.8.1",
+        "external:jQuery@3.7.1",
+        "external:jQuery UI@1.14.1"
+      ]
+    },
+    {
+      "ref": "pkg:composer/scavix/lessphp@v0.8.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+      "dependsOn": [
+        "pkg:composer/wdf-core@1.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:composer/ip2location/ip2location-php@9.8.0",
+      "dependsOn": []
+    }
+  ]
+}
