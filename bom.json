@@ -1,9 +1,9 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "version": 2,
+  "version": 3,
   "metadata": {
-    "timestamp": "2025-09-17T07:46:45.412Z",
+    "timestamp": "2025-09-17T08:59:22.427Z",
     "manufacturer": {
       "name": "Scavix Software GmbH & Co. KG",
       "url": [
@@ -12,11 +12,11 @@
     },
     "component": {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
-      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.2",
+      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.2",
       "group": "scavix",
       "name": "wdf-ip2location",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -48,11 +48,11 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
-      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "bom-ref": "pkg:composer/scavix/wdf-ip2location@1.0.2",
+      "purl": "pkg:composer/scavix/wdf-ip2location@1.0.2",
       "group": "scavix",
       "name": "wdf-ip2location",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -229,11 +229,11 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
-      "purl": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+      "bom-ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.2",
+      "purl": "pkg:composer/scavix/wdf-curlwrapper@1.0.2",
       "group": "scavix",
       "name": "wdf-curlwrapper",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -292,10 +292,10 @@
   ],
   "dependencies": [
     {
-      "ref": "pkg:composer/scavix/wdf-ip2location@1.0.1",
+      "ref": "pkg:composer/scavix/wdf-ip2location@1.0.2",
       "dependsOn": [
         "pkg:composer/scavix/wdf-core@1.0.2",
-        "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+        "pkg:composer/scavix/wdf-curlwrapper@1.0.2",
         "pkg:composer/ip2location/ip2location-php@9.8.0"
       ]
     },
@@ -312,7 +312,7 @@
       "dependsOn": []
     },
     {
-      "ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.1",
+      "ref": "pkg:composer/scavix/wdf-curlwrapper@1.0.2",
       "dependsOn": [
         "pkg:composer/wdf-core@1.0.2"
       ]
