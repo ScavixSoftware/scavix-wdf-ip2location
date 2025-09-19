@@ -174,7 +174,7 @@ function get_timezone_by_ip($ip = false)
     if($ret = cache_get($key))
 		return $ret;
 
-    if(($data = get_geo_location_by_ip($ip)) && (ifavail($data, 'countryCode') == 'DE'))
+    if(($data = get_geo_location_by_ip($ip)) && (($data['countryCode']??'') == 'DE'))
         return 'Europe/Berlin';     // Germany is always Europe/Berlin
 
     $isDst = date('I');
@@ -226,8 +226,8 @@ function get_timezone_by_ip($ip = false)
         $services["https://api.ipinfodb.com/v3/ip-city/?key={$CONFIG['geoip']['ipinfodb']['apikey']}&ip={$ip}&format=xml"] = function($response)
         {
             $data = simplexml_load_string($response);
-            if(avail($data, 'timeZone'))
-                return [(string)$data->timeZone, (string)ifavail($data, 'countryCode')];
+            if (avail($data, 'timeZone'))
+                return ["{$data->timeZone}", $data->countryCode ?? ''];
             return false;
         };
     }
@@ -236,19 +236,18 @@ function get_timezone_by_ip($ip = false)
 
     // use geobytes free service (limited). Free API key is 7c756203dbb38590a66e01a5a3e1ad96
     $apikey = (isset($CONFIG['geoip']['geobytes']) && isset($CONFIG['geoip']['geobytes']['apikey'])) ? $CONFIG['geoip']['geobytes']['apikey'] : '7c756203dbb38590a66e01a5a3e1ad96';
-    $services["https://secure.geobytes.com/GetCityDetails?key=".$apikey."&fqcn=$ip"] = function($response) use ($isDst)
+    $services["https://secure.geobytes.com/GetCityDetails?key={$apikey}&fqcn={$ip}"] = function($response) use ($isDst)
     {
         $data = json_decode($response, true);
-        if( $data && $data['geobytestimezone'] )
+        if( $tz = ($data['geobytesinternet'] ?? '') )
         {
-            $tz = $data['geobytestimezone'];
             if($isDst && (strpos($tz, ':') !== false))
             {
-                list($hours, $minutes) = explode(':', $tz);
+                [$hours, $minutes] = explode(':', $tz);
                 $hours = intval($hours) + 1;
                 $tz = ($hours >= 0 ? '+' : '-').sprintf('%02d:%02d', abs($hours), $minutes);
             }
-            return [$tz, ifavail($data, 'geobytesinternet')];
+            return [$tz, $data['geobytesinternet'] ?? ''];
         }
         return false;
     };
@@ -267,8 +266,8 @@ function get_timezone_by_ip($ip = false)
             $cb = function($response)
             {
                 $data = simplexml_load_string($response);
-                if(avail($data, 'timezoneId'))
-                    return [(string)$data->timezoneId, (string)ifavail($data, 'countryCode')];
+                if (avail($data, 'timezoneId'))
+                    return ["{$data->timezoneId}", $data->countryCode ?? ''];
                 return false;
             };
         }
@@ -296,7 +295,7 @@ function get_timezone_by_ip($ip = false)
             {
                 if(!$zone[1])
                     $zone[1] = get_countrycode_by_ip($ip);
-                list($hours, $minutes) = explode(':', $zone[0]);
+                [$hours, $minutes] = explode(':', $zone[0]);
                 $seconds = $hours * 60 * 60 + $minutes * 60;
                 $tz = false;
                 if($zone[1])
@@ -335,9 +334,7 @@ function get_timezone_by_ip($ip = false)
         }
     }
 
-    $zone = isset($CONFIG['geoip']['default_timezone'])
-        ?$CONFIG['geoip']['default_timezone']
-        :date_default_timezone_get();
+    $zone = $CONFIG['geoip']['default_timezone'] ?? date_default_timezone_get();
     log_debug("No timezone found for $ip, falling back to $zone. Tried: ".join(', ', $triedurls));
     cache_set($key, $zone, 60 * 60); // keep that in cache for an hour
 	return $zone;
