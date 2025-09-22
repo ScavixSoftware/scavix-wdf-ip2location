@@ -174,7 +174,7 @@ function get_timezone_by_ip($ip = false)
     if($ret = cache_get($key))
 		return $ret;
 
-    if(($data = get_geo_location_by_ip($ip)) && (($data['countryCode']??'') == 'DE'))
+    if(($data = get_geo_location_by_ip($ip)) && (($data->countryCode??'') == 'DE'))
         return 'Europe/Berlin';     // Germany is always Europe/Berlin
 
     $isDst = date('I');
