@@ -41,7 +41,7 @@ function ip2location_init()
 	if( !Wdf::$ClientIP )
 		Wdf::$ClientIP = get_ip_address();
 
-	if( !isset($CONFIG['ip2location']) || (!file_exists($CONFIG['ip2location']['ipv4_bin_file']) && !file_exists($CONFIG['ip2location']['ipv6_bin_file'])) )
+	if( !defined("NO_CONFIG_NEEDED") && (!isset($CONFIG['ip2location']) || (!file_exists($CONFIG['ip2location']['ipv4_bin_file']) && !file_exists($CONFIG['ip2location']['ipv6_bin_file'])) ))
 		WdfException::Raise("ip2location module: missing database BIN file. Get it from https://lite.ip2location.com/ip2location-lite");
 
     if (isset($CONFIG['geoip']))
